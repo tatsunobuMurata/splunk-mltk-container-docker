@@ -3,7 +3,7 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 ARG TAG
 
-# Setup Anconda Base
+# Setup updated Anconda Base 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 RUN apt-get update && apt-get install -y wget vim bzip2
