@@ -112,7 +112,7 @@ case $tag in
 		dockerfile="Dockerfile.root.3.0"
 		;;
 	transformers-cpu)
-		base="ubuntu:20.04"
+		base="tensorflow/tensorflow:latest"
 		dockerfile="Dockerfile.3.9.transformers.cpu"
 		;;
 	*)
