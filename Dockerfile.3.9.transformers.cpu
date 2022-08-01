@@ -6,15 +6,12 @@ ARG TAG
 # Setup Anconda Base
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
-RUN apt-get update && apt-get install -y wget vim bzip2 python3.8-venv
+RUN apt-get update && apt-get install -y wget vim bzip2
 RUN apt-get update --fix-missing && apt-get install -y git ca-certificates 
 
 # Install basics
 WORKDIR /srv
 RUN mkdir /dltk
-RUN python -m venv .env && \
-    ource .env/bin/activate && \
-    .env/Scripts/activate
 COPY ./requirements_transformers39.txt /dltk/requirements_transformers39.txt
 RUN pip install --no-cache-dir --upgrade -r /dltk/requirements_transformers39.txt
 RUN apt-get update && apt-get upgrade -y
