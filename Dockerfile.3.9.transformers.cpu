@@ -12,6 +12,9 @@ RUN apt-get update --fix-missing && apt-get install -y git ca-certificates
 # Install basics
 WORKDIR /srv
 RUN mkdir /dltk
+RUN python -m venv .env && \
+    ource .env/bin/activate && \
+    .env/Scripts/activate
 COPY ./requirements_transformers39.txt /dltk/requirements_transformers39.txt
 RUN pip install --no-cache-dir --upgrade -r /dltk/requirements_transformers39.txt
 RUN apt-get update && apt-get upgrade -y
