@@ -113,7 +113,7 @@ case $tag in
 		;;
 	transformers-cpu)
 		base="ubuntu:20.04"
-		dockerfile="Dockerfile.3.8.transformers.cpu"
+		dockerfile="Dockerfile.3.9.transformers.cpu"
 		;;
 	*)
 		echo "Invalid container image tag: $tag, expected [golden-image-cpu|golden-image-gpu|tf-cpu|tf-gpu|pytorch|pytorch-nlp]"
