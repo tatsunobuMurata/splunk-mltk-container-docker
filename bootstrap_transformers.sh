@@ -1,5 +1,4 @@
 #!/bin/bash
-source activate transformers
 #ipython kernel install --user --name=rapids
 
 export LC_ALL=C.UTF-8

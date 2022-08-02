@@ -112,7 +112,7 @@ case $tag in
 		dockerfile="Dockerfile.root.3.0"
 		;;
 	transformers-cpu)
-		base="tensorflow/tensorflow:latest"
+		base="tensorflow/tensorflow:2.8.0"
 		dockerfile="Dockerfile.3.9.transformers.cpu"
 		;;
 	transformers-golden-cpu)
