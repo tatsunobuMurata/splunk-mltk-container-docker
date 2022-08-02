@@ -8,5 +8,11 @@ aiofiles
 jupyterlab<3.0.0
 jupyterlab-nvdashboard==0.5.0
 
+# other dependencies
+tensorflow==2.8.0
+keras==2.8.0
+numpy==1.22.1
+
+
 # libraries
 transformers
