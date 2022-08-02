@@ -1,5 +1,4 @@
 #!/bin/bash
-#ipython kernel install --user --name=rapids
 
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
@@ -19,4 +18,4 @@ else
   echo "ENABLE_HTTPS=true"
 fi
 
-jupyter lab --no-browser & uvicorn app.main:app --host 0.0.0.0 --port 5000 $uvicorn_https_param
+jupyter lab --no-browser & tensorboard --bind_all --logdir /srv/notebooks/logs/ & mlflow ui -p 6000 -h 0.0.0.0 & uvicorn app.main:app --host 0.0.0.0 --port 5000 $uvicorn_https_param

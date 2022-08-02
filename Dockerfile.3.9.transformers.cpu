@@ -9,7 +9,27 @@ ENV PATH /opt/conda/bin:$PATH
 RUN apt-get update && apt-get install -y wget vim bzip2
 RUN apt-get update --fix-missing && apt-get install -y git ca-certificates 
 
-# Install basics
+# pip update
+RUN pip install --upgrade pip
+
+# DLTK related libraries
+RUN conda install -n base nb_conda waitress datashader && \
+    conda install -n base -c conda-forge "nodejs>=10.0.0" jupyterlab jupyterlab-git dask-ml dask-labextension dask-xgboost "spacy==2.3.2" fbprophet pomegranate shap lime umap-learn tslearn kmodes imbalanced-learn pymc3 stumpy tqdm node2vec mlflow ipywidgets && \
+    jupyter labextension install dask-labextension && \
+    jupyter serverextension enable --py --sys-prefix dask_labextension --user && \
+    pip install jupyter-tensorboard && \
+    jupyter labextension install jupyterlab_tensorboard && \
+    jupyter serverextension enable --py --sys-prefix jupyter_tensorboard && \
+    jupyter tensorboard enable --user && \
+    python -m spacy download en_core_web_sm && \
+    pip install pyarrow>=3.0.0 vaex>=4.0.0 causalnex bocd spacytextblob==0.1.7 spektral && \
+    jupyter lab build && \
+    jupyter lab clean && \
+    pip install pyopenssl && \
+    apt-get update && apt-get install -y build-essential && \
+    pip install pyfim
+
+# Transformers related libraries
 WORKDIR /srv
 RUN mkdir /dltk
 COPY ./requirements_transformers39.txt /dltk/requirements_transformers39.txt
