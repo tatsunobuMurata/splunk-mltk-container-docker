@@ -116,7 +116,7 @@ case $tag in
 		dockerfile="Dockerfile.3.9.transformers.cpu"
 		;;
 	transformers-gpu)
-		base="tensorflow/tensorflow-gpu:2.8.0"
+		base="nvidia/cuda:11.3.0-cudnn8-runtime-ubuntu20.04"
 		dockerfile="Dockerfile.3.9.transformers.gpu"
 		;;
 	*)

@@ -18,6 +18,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_6
     echo "conda activate base" >> ~/.bashrc
 
 # DLTK related libraries
+RUN conda install -n base tensorflow-gpu
 RUN conda install -n base nb_conda waitress datashader && \
     conda install -n base -c conda-forge "nodejs>=10.0.0" jupyterlab jupyterlab-git dask-ml dask-labextension dask-xgboost "spacy==2.3.2" fbprophet pomegranate shap lime umap-learn tslearn kmodes imbalanced-learn pymc3 stumpy tqdm node2vec mlflow && \
     jupyter labextension install dask-labextension && \
