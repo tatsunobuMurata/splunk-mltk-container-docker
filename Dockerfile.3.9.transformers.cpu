@@ -37,8 +37,8 @@ RUN conda install -n base nb_conda waitress datashader && \
 # Transformers related libraries
 WORKDIR /srv
 RUN mkdir /dltk
-COPY ./requirements_transformers39.txt /dltk/requirements_transformers39_cpu.txt
-RUN pip install --no-cache-dir --upgrade -r /dltk/requirements_transformers39.txt
+COPY ./requirements_transformers39_cpu.txt /dltk/requirements_transformers39_cpu.txt
+RUN pip install --no-cache-dir --upgrade -r /dltk/requirements_transformers39_cpu.txt
 RUN apt-get update && apt-get upgrade -y
 
 # Copy bootstrap entry point script
