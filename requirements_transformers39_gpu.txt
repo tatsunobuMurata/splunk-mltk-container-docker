@@ -8,15 +8,6 @@ aiofiles
 #jupyterlab<3.0.0
 #jupyterlab-nvdashboard==0.5.0
 
-# for data preparation
-pathlib
-requests
-urllib
-bs4
-tqdm
-tarfile
-neologdn
-
 # for model construction
 transformers
 sentencepiece
