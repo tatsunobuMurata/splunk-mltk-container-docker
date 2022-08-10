@@ -30,7 +30,7 @@ RUN conda install -n base nb_conda waitress datashader && \
     pip install "jupyterlab-nvdashboard==0.5.0" && \
     jupyter labextension install jupyterlab-nvdashboard && \
     python -m spacy download en_core_web_sm && \
-    pip install pyarrow>=3.0.0 vaex>=4.0.0 causalnex bocd spacytextblob==0.1.7 spektral && \
+    pip install pyarrow>=3.0.0 vaex>=4.0.0 causalnex bocd spacytextblob==0.1.7 spektral && typing_extensions &&\
     jupyter lab build && \
     jupyter lab clean && \
     pip install pyopenssl
