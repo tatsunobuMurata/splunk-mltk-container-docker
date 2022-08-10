@@ -10,10 +10,7 @@ aiofiles
 
 # for data preparation
 pathlib
-re
-time
 requests
-pandas
 urllib
 bs4
 tqdm
