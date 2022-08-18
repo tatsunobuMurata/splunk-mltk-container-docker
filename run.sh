@@ -19,4 +19,4 @@ echo "Stop and remove container..."
 docker stop mltk-container-$tag
 docker rm mltk-container-$tag
 echo "Starting container..."
-docker run --runtime=nvidia -it --rm --name mltk-container-$tag -l mltk_container -l mltk_model -p 5000:5000 -p 8888:8888 -p 6006:6006 -v mltk-container-app:/srv/app -v mltk-container-notebooks:/srv/notebooks mltk-container-$tag:latest
+docker run -it --rm --name mltk-container-$tag -l mltk_container -l mltk_model -p 5000:5000 -p 8888:8888 -p 6006:6006 -v mltk-container-app:/srv/app -v mltk-container-notebooks:/srv/notebooks mltk-container-$tag:latest
