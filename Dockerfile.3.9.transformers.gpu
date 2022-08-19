@@ -45,6 +45,8 @@ RUN conda clean --all -f -y && \
     find "/opt/conda" -depth \( -type f -a -name '*.pyc' -o -name '*.pyo' -o -name '*.a' -o -name '*.js.map' \) -exec rm -rf '{}' \;
 
 # Transformers related libraries
+ENV LD_LIBRARY_PATH /usr/lib/x86_64-linux-gnu
+RUN ldconfig
 WORKDIR /srv
 RUN mkdir /dltk
 COPY ./requirements_transformers39_gpu.txt /dltk/requirements_transformers39_gpu.txt
