@@ -67,6 +67,10 @@ COPY config/jupyter_notebook_config.py /dltk/.jupyter/jupyter_notebook_config.py
 COPY config/jupyter_notebook_template.tpl /dltk/.jupyter/jupyter_notebook_conversion.tpl
 COPY config/null.tpl /dltk/.jupyter/null.tpl
 
+COPY ./add_model.py /dltk/add_model.py
+CMD ["/dltk/add_model.py"]
+ENTRYPOINT ["python"]
+
 # Handle user rights
 RUN chgrp -R 0 /dltk && \
     chmod -R g=u /dltk
