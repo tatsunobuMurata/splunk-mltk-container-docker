@@ -1,9 +1,12 @@
-# requires transformers and sentencepiece installations
+## requires transformers and sentencepiece installations
+# !pip install transformers
+# !pip install sentencepiece
+# !pip install torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 # Download fine-tuned model (t5 fine-tuned japanese model)
 MODEL_NAME2 = "Huaibo/t5_dialog_jp"
-PATH2 = "/dltk/app/model/data/t5_dialog_jp"   # change ~ to some existing path
+PATH2 = "/dltk/app/model/data/t5_dialog_jp"   # some existing path
 tokenizer = T5Tokenizer.from_pretrained(MODEL_NAME2)
 tokenizer.save_pretrained(PATH2)
 model = T5ForConditionalGeneration.from_pretrained(MODEL_NAME2)
