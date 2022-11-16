@@ -17,3 +17,6 @@ keras==2.8.0 # come with tensorflow
 numpy==1.22.1
 sklearn
 pandas
+torchmetrics
+fugashi
+ipadic
